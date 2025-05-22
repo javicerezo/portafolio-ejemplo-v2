@@ -1,4 +1,49 @@
+import { useState, useRef, useEffect } from 'react';
+import { header, cuadro } from '../CONST';
+
+
 export function CuadroAmarillo () {
+    const [positionScrollY, setPositionScrollY] = useState(window.scrollY);
+    
+
+    // const handleScroll = () => {
+    //     console.log(window.scrollY)
+    //     setPositionScrollY(window.scrollY)
+    // }
+    // console.log(header)
+
+
+
+
+    // if(positionScrollY === '0') {
+    //     cuadro.children[0].classList.remove('c-cuadro__sup--mod');
+    //     cuadro.children[1].classList.remove('c-cuadro__der--mod');
+    //     cuadro.children[2].classList.remove('c-cuadro__inf--mod');
+    //     cuadro.children[3].classList.remove('c-cuadro__izq--mod');
+
+    //     header.classList.remove('c-header--mod');
+
+    //     cuadro.children[2].children[0].classList.remove('c-cuadro__p--mod');
+    //     cuadro.children[2].children[1].classList.add('c-cuadro__p--mod');
+    // } else {
+    //     cuadro.children[0].classList.add('c-cuadro__sup--mod');
+    //     cuadro.children[1].classList.add('c-cuadro__der--mod');
+    //     cuadro.children[2].classList.add('c-cuadro__inf--mod');
+    //     cuadro.children[3].classList.add('c-cuadro__izq--mod');
+        
+    //     header.classList.add('c-header--mod');
+        
+    //     cuadro.children[2].children[0].classList.add('c-cuadro__p--mod');
+    //     cuadro.children[2].children[1].classList.remove('c-cuadro__p--mod');
+    // }
+
+
+    // useEffect ( () => {
+    //     window.addEventListener('scroll', handleScroll);
+    //     // setPositionScrollY(window.scrollY)
+    //     // console.log(positionScrollY)
+    // })
+
     return (
         <section className="c-cuadro js-cuadro">
             <div className="c-cuadro__sup"></div>

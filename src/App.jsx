@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Header } from './components/Header';
 import { CuadroAmarillo } from './components/CuadroAmarillo';
@@ -10,133 +10,64 @@ import { Trabajo } from './components/Trabajo';
 import { Contacto } from './components/Contacto';
 import { Modal } from './components/Modal';
 import { Footer } from './components/Footer';
-import { useEffect } from 'react';
 
-import { dbTrabajos } from './data/dbTrabajos.js'
-import { dbModal } from './data/dbModal.js'
+import { dbTrabajos } from './data/dbTrabajos.js';
+import { dbModal } from './data/dbModal.js';
 
 export function App() {
-  const [ trabajo, setTrabajo ] = useState([]);
-  const [ modal, setModal ] = useState([]);
+    const [ listaTrabajos, setListaTrabajos ] = useState(dbTrabajos);
+    const [ trabajo, setTrabajo ] = useState({});
+    const [ listaModales, setListaModales ] = useState(dbModal);
+    const [ modal, setModal ] = useState({});
+    
+    useEffect( () => {
+        listaModales.map( obj => {
+            if(obj.value === trabajo.value){
+                obj.show = true;
+                setModal(obj)
+            }
+        })
+    });
 
 
-  useEffect( () => {
-    setTrabajo(dbTrabajos)
-    setModal(dbModal)
-  }, [])
 
+    return (
+        <>
 
-  return (
-    <>
+            <Header />
 
-      <Header />
+            <CuadroAmarillo />
 
-      <CuadroAmarillo />
+            <Portada />
 
-      <Portada />
+            <Separador />
 
-      <Separador />
+            <SobreMi />
 
-      <SobreMi />
+            <main className="c-trabajos o-container js-trabajos" id="c-trabajos">
+                <h3 className="c-trabajos__h3">Mis<span> trabajos </span>web</h3>
+                <h4 className="c-trabajos__h4">Una muestra de mis trabajos.</h4>
+                <ul className="c-trabajos__ul js-trabajos__ul">
+                    {listaTrabajos.map( obj => 
+                        <Trabajo 
+                            key={obj.value}
+                            obj={obj}
+                            setTrabajo={setTrabajo}
+                        />
+                    )}
+                </ul>
+            </main>
 
-      <main className="c-trabajos o-container js-trabajos" id="c-trabajos">
-          <h3 className="c-trabajos__h3">Mis<span> trabajos </span>web</h3>
-          <h4 className="c-trabajos__h4">Una muestra de mis trabajos.</h4>
-          <ul className="c-trabajos__ul js-trabajos__ul">
-            {Object.values(trabajo).map( () => {
+            <Contacto />
 
-              return <p>desde lista de trabajos</p>
-            })}
-              <Trabajo />
-          </ul>
-      </main>
+            
+            
+            {modal.show ? <Modal key={modal.value} obj={modal} setTrabajo={setTrabajo} setModal={setModal}/> : null}
+                
+            
 
-      <Contacto />
-
-      <Modal />
-      <div className="c-modal js-modal">
-          <div className="c-modal__contenedor">
-              <div className="c-modal__superior">
-                  <p className="c-modal__url"><a href="#" target="_blank">PON LA URL DEL PROYECTO</a></p>
-                  <i className="fa-solid fa-x"></i>
-              </div>
-              <h3 className="c-modal__titulo">titulo</h3>
-              <div className="c-modal__img">
-                  <img src="build/img/portafolio/cabin.png" loading="lazy" />
-              </div>
-              <div className="c-modal__inferior">
-                  <p className="c-modal__parrafo"><span>Características: HTML, CSS, JavaScript</span></p>
-                  <p>Descripcion: describe un poco el proyecto</p>
-              </div>
-          </div>
-      </div>
-      <div className="c-modal js-modal">
-          <div className="c-modal__contenedor">
-              <div className="c-modal__superior">
-                  <p className="c-modal__url"><a href="#" target="_blank">PON LA URL DEL PROYECTO</a></p>
-                  <i className="fa-solid fa-x"></i>
-              </div>
-              <h3 className="c-modal__titulo">titulo</h3>
-              <div className="c-modal__img">
-                  <img src="build/img/portafolio/cake.png" loading="lazy" />
-              </div>
-              <div className="c-modal__inferior">
-                  <p className="c-modal__parrafo"><span>Características: HTML, CSS, JavaScript</span></p>
-                  <p>Descripcion: describe un poco el proyecto</p>
-              </div>
-          </div>
-      </div>
-      <div className="c-modal js-modal">
-          <div className="c-modal__contenedor">
-              <div className="c-modal__superior">
-                  <p className="c-modal__url"><a href="#" target="_blank">PON LA URL DEL PROYECTO</a></p>
-                  <i className="fa-solid fa-x"></i>
-              </div>
-              <h3 className="c-modal__titulo">titulo</h3>
-              <div className="c-modal__img">
-                  <img src="build/img/portafolio/game.png" loading="lazy" />
-              </div>
-              <div className="c-modal__inferior">
-                  <p className="c-modal__parrafo"><span>Características: HTML, CSS, JavaScript</span></p>
-                  <p>Descripcion: describe un poco el proyecto</p>
-              </div>
-          </div>
-      </div>
-      <div className="c-modal js-modal">
-          <div className="c-modal__contenedor">
-              <div className="c-modal__superior">
-                  <p className="c-modal__url"><a href="#" target="_blank">PON LA URL DEL PROYECTO</a></p>
-                  <i className="fa-solid fa-x"></i>
-              </div>
-              <h3 className="c-modal__titulo">titulo</h3>
-              <div className="c-modal__img">
-                  <img src="build/img/portafolio/safe.png" loading="lazy" />
-              </div>
-              <div className="c-modal__inferior">
-                  <p className="c-modal__parrafo"><span>Características: HTML, CSS, JavaScript</span></p>
-                  <p>Descripcion: describe un poco el proyecto</p>
-              </div>
-          </div>
-      </div>
-      <div className="c-modal js-modal">
-          <div className="c-modal__contenedor">
-              <div className="c-modal__superior">
-                  <p className="c-modal__url"><a href="#" target="_blank">PON LA URL DEL PROYECTO</a></p>
-                  <i className="fa-solid fa-x"></i>
-              </div>
-              <h3 className="c-modal__titulo">titulo</h3>
-              <div className="c-modal__img">
-                  <img src="build/img/portafolio/circus.png" loading="lazy" />
-              </div>
-              <div className="c-modal__inferior">
-                  <p className="c-modal__parrafo"><span>Características: HTML, CSS, JavaScript</span></p>
-                  <p>Descripcion: describe un poco el proyecto</p>
-              </div>
-          </div>
-      </div>
-
-      <Footer />
-    </>
-  )
+            <Footer />
+        </>
+    )
 }
 
