@@ -1,48 +1,45 @@
-import { useState, useRef, useEffect } from 'react';
-import { header, cuadro } from '../CONST';
-
+import { useState, useEffect } from 'react';
 
 export function CuadroAmarillo () {
-    const [positionScrollY, setPositionScrollY] = useState(window.scrollY);
+    const [positionScrollY, setPositionScrollY] = useState(false);
     
+    window.addEventListener('scroll', () => {
+        if(window.scrollY === 0) {
+            setPositionScrollY(false);  
+        } else {
+            setPositionScrollY(true);
+        }
+    });
 
-    // const handleScroll = () => {
-    //     console.log(window.scrollY)
-    //     setPositionScrollY(window.scrollY)
-    // }
-    // console.log(header)
+    useEffect ( () => {
+        const cuadro = document.querySelector('.js-cuadro');
+        const header = document.querySelector('.js-header');
 
-
-
-
-    // if(positionScrollY === '0') {
-    //     cuadro.children[0].classList.remove('c-cuadro__sup--mod');
-    //     cuadro.children[1].classList.remove('c-cuadro__der--mod');
-    //     cuadro.children[2].classList.remove('c-cuadro__inf--mod');
-    //     cuadro.children[3].classList.remove('c-cuadro__izq--mod');
-
-    //     header.classList.remove('c-header--mod');
-
-    //     cuadro.children[2].children[0].classList.remove('c-cuadro__p--mod');
-    //     cuadro.children[2].children[1].classList.add('c-cuadro__p--mod');
-    // } else {
-    //     cuadro.children[0].classList.add('c-cuadro__sup--mod');
-    //     cuadro.children[1].classList.add('c-cuadro__der--mod');
-    //     cuadro.children[2].classList.add('c-cuadro__inf--mod');
-    //     cuadro.children[3].classList.add('c-cuadro__izq--mod');
-        
-    //     header.classList.add('c-header--mod');
-        
-    //     cuadro.children[2].children[0].classList.add('c-cuadro__p--mod');
-    //     cuadro.children[2].children[1].classList.remove('c-cuadro__p--mod');
-    // }
-
-
-    // useEffect ( () => {
-    //     window.addEventListener('scroll', handleScroll);
-    //     // setPositionScrollY(window.scrollY)
-    //     // console.log(positionScrollY)
-    // })
+        if(positionScrollY) {
+            cuadro.children[0].classList.add('c-cuadro__sup--mod');
+            cuadro.children[1].classList.add('c-cuadro__der--mod');
+            cuadro.children[2].classList.add('c-cuadro__inf--mod');
+            cuadro.children[3].classList.add('c-cuadro__izq--mod');
+            
+            header.classList.add('c-header--mod');
+            
+            cuadro.children[2].children[0].classList.add('c-cuadro__p--mod');
+            cuadro.children[2].children[1].classList.remove('c-cuadro__p--mod');   
+        } else {
+            if(cuadro.children[0].classList.contains('c-cuadro__sup--mod')){
+                cuadro.children[0].classList.remove('c-cuadro__sup--mod');
+                cuadro.children[1].classList.remove('c-cuadro__der--mod');
+                cuadro.children[2].classList.remove('c-cuadro__inf--mod');
+                cuadro.children[3].classList.remove('c-cuadro__izq--mod');
+                
+                header.classList.remove('c-header--mod');
+                
+                cuadro.children[2].children[0].classList.remove('c-cuadro__p--mod');
+                cuadro.children[2].children[1].classList.add('c-cuadro__p--mod');
+            }
+            
+        }
+    })
 
     return (
         <section className="c-cuadro js-cuadro">

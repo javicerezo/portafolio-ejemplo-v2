@@ -1,13 +1,11 @@
 export function Modal ({obj, setTrabajo, setModal}) {
     const {image, tittle, url, caract, desc } = obj;
 
-    
-    
     const handleClick = () => {
         setModal({});
         setTrabajo({});
     }
-
+    
     return (
         <div className="c-modal js-modal">
             <div className="c-modal__contenedor">

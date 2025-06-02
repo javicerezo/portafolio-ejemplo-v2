@@ -1,4 +1,69 @@
+import { useEffect, useState } from "react";
+import { deshabilitar, habilitar, comprobarCorreo, imprimirAlerta, 
+        resetFormulario } from "../funciones";
+
 export function Contacto() {
+    const [objCorreo, setObjCorreo] = useState({nombre: '', correo:'', asunto: ''});
+    const [enviarCorreo, setEnviarCorreo] = useState(false);
+
+    const handleInputNombre = e => {
+        let infoCorreo = objCorreo;
+        infoCorreo.nombre = e.target.value.trim();
+        setObjCorreo(infoCorreo);
+        comprobarInputs(objCorreo)
+    }
+    const handleInputCorreo = e => {
+        let infoCorreo = objCorreo;
+        infoCorreo.correo = e.target.value.trim();
+        setObjCorreo(infoCorreo);
+        comprobarInputs(objCorreo)
+    }
+    const handleInputAsunto = e => {
+        let infoCorreo = objCorreo;
+        infoCorreo.asunto = e.target.value.trim();
+        setObjCorreo(infoCorreo);
+        comprobarInputs(objCorreo)
+    }
+
+    function comprobarInputs (obj) {
+        if(obj.nombre !== '' && obj.correo !== '' && obj.asunto !== '') {
+            setEnviarCorreo(true)
+        } else {
+            setEnviarCorreo(false)
+        }
+    }
+
+    const handleEnviarCorreo = e => {
+        e.preventDefault();
+        const mensaje = document.querySelector('#mensaje');
+        const spinner = document.querySelector('.spinner');
+        const formulario = document.querySelector('#formulario');
+
+        let correcto = comprobarCorreo(objCorreo.correo);
+        if(correcto) {
+            spinner.classList.remove('u-display--none');
+            const resetCorreo = {
+                nombre: '',
+                correo: '',
+                asunto: ''
+            }
+            setObjCorreo(resetCorreo);
+            setEnviarCorreo(false);
+            setTimeout(() => {
+                spinner.classList.add('u-display--none');
+                imprimirAlerta(mensaje, 'exito', 'Mensaje enviado correctamente');
+                resetFormulario(formulario);
+            }, 3000);
+        } else {
+            imprimirAlerta(mensaje, 'error', 'El correo no es correcto');
+        }
+    }
+
+    useEffect( () => {
+        const btnEnviarCorreo = document.querySelector('.js-contacto__btn');
+        enviarCorreo === false ? deshabilitar(btnEnviarCorreo) : habilitar(btnEnviarCorreo); 
+    }, [enviarCorreo]);
+
     return (
         <section className="c-contacto o-container js-contacto" id="c-contacto">
             <div className="c-contacto__formulario">
@@ -15,10 +80,11 @@ export function Contacto() {
                     </div>
                 </div>
                 <form className="c-contacto__inputs" id="formulario">
-                    <input id="nombre" name="nombre" type="text" placeholder="NOMBRE" />
-                    <input id="correo" name="correo" type="email" placeholder="EMAIL" />
-                    <textarea id="asunto" name="asunto" placeholder="ASUNTO"></textarea>
-                    <button className="c-contacto__btn js-contacto__btn o-button o-button--amarillo" id="btn-enviar" type="submit">Enviar</button>
+                    <input id="nombre" name="nombre" type="text" placeholder="NOMBRE" onInput={handleInputNombre}/>
+                    <input id="correo" name="correo" type="email" placeholder="EMAIL" onChange={handleInputCorreo}/>
+                    <textarea id="asunto" name="asunto" placeholder="ASUNTO" onChange={handleInputAsunto}></textarea>
+                    <button className="c-contacto__btn js-contacto__btn o-button o-button--amarillo" 
+                    id="btn-enviar" type="submit" onClick={handleEnviarCorreo}>Enviar</button>
                 </form>
             </div>
             <div className="c-contacto__respuesta">

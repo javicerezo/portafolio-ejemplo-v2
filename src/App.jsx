@@ -27,9 +27,14 @@ export function App() {
                 setModal(obj)
             }
         })
-    });
-
-
+    }, [trabajo]);
+    
+    useEffect( () => {
+        const cuadroModal = document.querySelector('.js-modal');
+        if(cuadroModal != null) {
+            cuadroModal.classList.add('c-modal--show');
+        }
+    }, [modal]); 
 
     return (
         <>
