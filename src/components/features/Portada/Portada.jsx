@@ -1,3 +1,4 @@
+import { Button } from '../../ui/Button/Button';
 import './Portada.scss';
 
 export function Portada () {
@@ -9,7 +10,7 @@ export function Portada () {
                 </h1>
                 <h2 className="Portada-h2"> - DESARROLLADOR WEB - </h2>
                 <div className="Portada-button">
-                    <a className="o-button" href="#c-trabajos">[ Portafolio ]</a>
+                    <Button />
                 </div>
             </div>
         </section>

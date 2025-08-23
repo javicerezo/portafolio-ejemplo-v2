@@ -1,6 +1,6 @@
-@use './variables' as v;
+@use '../../../styles/variables' as v;
 
-.o-button {
+.Button {
     border: 2px solid map-get(v.$colores, color-secundario);
     border-radius: 15px;
     color: map-get(v.$colores, color-secundario);
@@ -25,5 +25,4 @@
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffc100",endColorstr="#ffc100",GradientType=1);
         }
     }
-
 }
