@@ -10,7 +10,10 @@ export function Portada () {
                 </h1>
                 <h2 className="Portada-h2"> - DESARROLLADOR WEB - </h2>
                 <div className="Portada-button">
-                    <Button />
+                    <Button 
+                        clases={"Button"}
+                        href={"#Trabajos"}
+                        texto={"[ Portafolio ]"}/>
                 </div>
             </div>
         </section>

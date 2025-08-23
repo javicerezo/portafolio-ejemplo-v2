@@ -1,7 +1,7 @@
 import './Button.scss';
 
-export const Button = () => {
+export const Button = ({clases, enlace = "#", texto}) => {
     return (
-        <a className="Button" href="#c-trabajos">[ Portafolio ]</a>
+        <a className={clases} href={enlace}>{texto}</a>
     );
 };
