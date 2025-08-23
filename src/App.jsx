@@ -1,78 +1,35 @@
-import './App.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-import { Header } from './components/Header';
-import { CuadroAmarillo } from './components/CuadroAmarillo';
-import { Portada } from './components/Portada';
-import { Separador } from './components/Separador';
-import { SobreMi } from './components/SobreMi';
-import { Trabajo } from './components/Trabajo';
-import { Contacto } from './components/Contacto';
-import { Modal } from './components/Modal';
-import { Footer } from './components/Footer';
+function App() {
+  const [count, setCount] = useState(0)
 
-import { dbTrabajos } from './data/dbTrabajos.js';
-import { dbModal } from './data/dbModal.js';
-
-export function App() {
-    const [ listaTrabajos, setListaTrabajos ] = useState(dbTrabajos);
-    const [ trabajo, setTrabajo ] = useState({});
-    const [ listaModales, setListaModales ] = useState(dbModal);
-    const [ modal, setModal ] = useState({});
-    
-    useEffect( () => {
-        listaModales.map( obj => {
-            if(obj.value === trabajo.value){
-                obj.show = true;
-                setModal(obj)
-            }
-        })
-    }, [trabajo]);
-    
-    useEffect( () => {
-        const cuadroModal = document.querySelector('.js-modal');
-        if(cuadroModal != null) {
-            cuadroModal.classList.add('c-modal--show');
-        }
-    }, [modal]); 
-
-    return (
-        <>
-
-            <Header />
-
-            <CuadroAmarillo />
-
-            <Portada />
-
-            <Separador />
-
-            <SobreMi />
-
-            <main className="c-trabajos o-container js-trabajos" id="c-trabajos">
-                <h3 className="c-trabajos__h3">Mis<span> trabajos </span>web</h3>
-                <h4 className="c-trabajos__h4">Una muestra de mis trabajos.</h4>
-                <ul className="c-trabajos__ul js-trabajos__ul">
-                    {listaTrabajos.map( obj => 
-                        <Trabajo 
-                            key={obj.value}
-                            obj={obj}
-                            setTrabajo={setTrabajo}
-                        />
-                    )}
-                </ul>
-            </main>
-
-            <Contacto />
-
-            
-            
-            {modal.show ? <Modal key={modal.value} obj={modal} setTrabajo={setTrabajo} setModal={setModal}/> : null}
-                
-            
-
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
 
+export default App
