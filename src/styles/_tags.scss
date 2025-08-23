@@ -1,0 +1,81 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    text-align: center;
+    font-family: map-get( v.$fuentes , tipo-secundaria);
+}
+
+body {
+    // max-width: 112.5rem;
+    font-family : map-get(v.$fuentes, tipo-principal);
+    color: map-get(v.$colores, color-primario);
+    background-color: map-get(v.$colores, color-secundario);
+    &.darkmode {
+        ::selection {
+            background-color: map-get(v.$colores, color-secundario);
+            color: map-get(v.$colores, color-primario);
+        }
+        color: map-get(v.$colores, color-secundario);
+        background-color: map-get(v.$colores, color-primario);
+        .c-header__dark-mode {
+            background-color: map-get(v.$colores, color-fondo-img-JC-dark);
+        }
+        .c-cuadro{
+            &__sup {
+                background-color: map-get(v.$colores, color-fondo);
+            }
+            &__der {
+                background-color: map-get(v.$colores, color-fondo);
+            }
+            &__inf {
+                background-color: map-get(v.$colores, color-fondo);
+            }
+            &__izq {
+                background-color: map-get(v.$colores, color-fondo);
+            }
+            &__p {
+                color: map-get(v.$colores, color-primario);   
+            }
+        }
+        .c-efecto {
+            &__ola-1 {
+                fill: map-get(v.$colores, color-ola-1-dark);
+            }
+            &__ola-2 {
+                fill: map-get(v.$colores, color-ola-2-dark);
+            }
+            &__ola-3 {
+                fill: map-get(v.$colores, color-ola-3-dark);
+            }
+        }
+        .c-portada {
+            background-image: url('../../public/assets/imgs/portada2.jpg');
+        }
+        .c-contacto {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../public/assets/imgs/oficina2.jpg');
+        }
+        .c-header__nav {
+            background-color: map-get(v.$colores, color-fondo);
+            @include m.tablet {
+                background-color: transparent;
+            }
+        }
+        .c-header__img {
+            left: 1.875rem;
+        }
+        .c-modal {
+            &__contenedor {
+                color: map-get(v.$colores, color-secundario);
+                background-color: map-get(v.$colores, color-primario);
+            }
+        }
+    }
+}
