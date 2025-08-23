@@ -1,27 +1,28 @@
 @use '../../../styles/variables' as v;
+@use 'sass:map';
 
 .Button {
-    border: 2px solid map-get(v.$colores, color-secundario);
+    border: 2px solid map.get(v.$colores, color-secundario);
     border-radius: 15px;
-    color: map-get(v.$colores, color-secundario);
+    color: map.get(v.$colores, color-secundario);
     font-size: .9375rem;
     padding: .625rem .9375rem;
     cursor: pointer;
     &:hover {
-        background: map-get(v.$colores, color-hover-boton);
+        background: map.get(v.$colores, color-hover-boton);
     }
     &--amarillo {
-        border: 2px solid map-get(v.$colores, color-fondo);
-        background: map-get(v.$colores, color-fondo);
-        background: -moz-radial-gradient(circle, map-get(v.$colores, color-fondo-transp) 0%, map-get(v.$colores, color-fondo) 75%);
-        background: -webkit-radial-gradient(circle, map-get(v.$colores, color-fondo-transp) 0%, map-get(v.$colores, color-fondo) 75%);
-        background: radial-gradient(circle, map-get(v.$colores, color-fondo-transp) 0%, map-get(v.$colores, color-fondo) 75%);
+        border: 2px solid map.get(v.$colores, color-fondo);
+        background: map.get(v.$colores, color-fondo);
+        background: -moz-radial-gradient(circle, map.get(v.$colores, color-fondo-transp) 0%, map.get(v.$colores, color-fondo) 75%);
+        background: -webkit-radial-gradient(circle, map.get(v.$colores, color-fondo-transp) 0%, map.get(v.$colores, color-fondo) 75%);
+        background: radial-gradient(circle, map.get(v.$colores, color-fondo-transp) 0%, map.get(v.$colores, color-fondo) 75%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffc100",endColorstr="#ffc100",GradientType=1);
         &:hover {
             background: rgb(255,193,0);
-            background: -moz-radial-gradient(circle, map-get(v.$colores, color-fondo) 0%, map-get(v.$colores, color-fondo-transp) 40%);
-            background: -webkit-radial-gradient(circle, map-get(v.$colores, color-fondo) 0%, map-get(v.$colores, color-fondo-transp) 40%);
-            background: radial-gradient(circle, map-get(v.$colores, color-fondo) 0%, map-get(v.$colores, color-fondo-transp) 40%);
+            background: -moz-radial-gradient(circle, map.get(v.$colores, color-fondo) 0%, map.get(v.$colores, color-fondo-transp) 40%);
+            background: -webkit-radial-gradient(circle, map.get(v.$colores, color-fondo) 0%, map.get(v.$colores, color-fondo-transp) 40%);
+            background: radial-gradient(circle, map.get(v.$colores, color-fondo) 0%, map.get(v.$colores, color-fondo-transp) 40%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffc100",endColorstr="#ffc100",GradientType=1);
         }
     }

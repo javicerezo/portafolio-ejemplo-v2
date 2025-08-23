@@ -1,4 +1,5 @@
 @use './variables' as v;
+@use 'sass:map';
 
 /* Reseteamos los margin y paddings de todas las etiquetas */
 * , *::before , *::after{
@@ -59,8 +60,8 @@ blockquote:before, blockquote:after, q:before, q:after {
 
 /* (Opcional) Configuramos el texto que seleccionamos */
 ::selection {
-  background-color: map-get(v.$colores, color-primario);
-  color: map-get(v.$colores, color-secundario);
+  background-color: map.get(v.$colores, color-primario);
+  color: map.get(v.$colores, color-secundario);
 }
 
 /* Nivelamos problemas de tipografías y colocación de formularios */
