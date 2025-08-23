@@ -1,0 +1,159 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+@use 'sass:map';
+
+.Header {
+    @include m.flex (row, nowrap, space-between, center);
+    @include m.position (fixed, 0, null, null, null);
+    transition: all 0.5s ease;
+    height: 2.1875rem;
+    z-index: 100;
+    @include m.tablet {
+        top: 2.5rem;
+    }
+    &--mod {
+        top: 0;
+    }
+    &-izquierda {
+        @include m.flex (row, nowrap, left, center);
+        margin-left: .3125rem;
+        @include m.telefono-xl {
+            margin-left: 3.125rem;
+        }
+    }
+
+    &-dark-mode {
+        background-color: map-get(v.$colores, color-fondo-img-JC);
+        border-radius: .9375rem;
+        padding: 0 0.5rem;
+        position: relative;
+        transition: all 0.5s ease;
+        cursor: pointer;
+
+    }
+    &-img {
+        height: 1.875em;
+        width: 1.875em;
+        position: absolute;
+        top: -.05rem;
+        left: -0.2rem;
+        transition: all 0.5s ease;
+
+    }
+    &-span {
+        color: map-get(v.$colores, color-secundario);
+        line-height: 1.5625rem;
+        font-size: .75rem;
+        padding: 0 0.2rem;
+    }
+    &-autor {
+        color: map-get(v.$colores , color-primario);
+        font-family: map-get(v.$fuentes, tipo-secundaria);
+        padding-left: 0.5rem;
+        font-style: italic;
+        font-weight: 700;
+        display: none;
+        transition: all 0.5s ease;
+        @include m.telefono-m {
+            font-size: .6em;
+            display: block;
+        }
+        @include m.telefono-xl {
+            font-size: .75em;
+            padding-left: 1rem;
+        }
+        @include m.tablet {
+            color: map-get(v.$colores, color-secundario);
+        }
+    }
+    &-burger {
+        position: relative;
+        margin: 0 1rem;
+        @include m.tablet {
+            display: none;
+        }
+        input {
+            display: none;
+        }
+        &-icono {
+            font-size: 20px;
+            position: relative;
+            color: map-get(v.$colores, color-primario);
+        }
+    }
+    &-nav {
+        opacity: 0;
+        visibility: hidden;
+        width: 0%;
+        @include m.position (absolute, null, -7.8857rem, -9.8476rem, null);
+        @include m.flex (column, nowrap, center, center);
+        background-color: map-get(v.$colores, color-fondo-transp);
+        backdrop-filter: blur(2px);
+        transition: all 1s ease;
+        @include m.tablet {
+            @include m.flex (row, nowrap, space-between, center);
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 2rem;
+            background-color: transparent;
+            backdrop-filter: blur(0);
+            opacity: 1;
+            visibility: visible;
+            width: auto;
+        }
+        &--mod {
+            opacity: 1;
+            visibility: visible;
+            width: auto;
+            right: 0;
+        }
+    }
+    &-li {
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid map-get(v.$colores, color-primario);
+        @include m.tablet {
+            padding: 0 0.9rem;
+            border-bottom: none;
+        }
+        &:last-child {
+            @include m.flex (row, nowrap, center, center);
+            a {
+                padding: 0 0.5rem;
+                color: map-get(v.$colores, color-primario);
+            }
+            @include m.tablet {
+                display: none; 
+            }
+        }
+    }
+    &-a {
+        color: map-get(v.$colores, color-primario);
+        font-family: map-get(v.$fuentes, tipo-secundaria);
+        font-weight: 800;
+        font-size: .8em;
+        transition: all 0.5s ease;
+        @include m.tablet {
+            color: map-get(v.$colores, color-secundario);
+        }
+        &--mod {
+            color: map-get(v.$colores, color-primario);
+        }
+        &:hover {
+            color: map-get(v.$colores, color-hover);
+            transform: scale(1.1);
+        }
+    }
+    &--mod {
+        top: 0;
+        .c-header-autor {
+            color: map-get(v.$colores, color-primario);
+        }
+        .c-header-a {
+            color: map-get(v.$colores, color-primario);
+            &:hover {
+                color: map-get(v.$colores, color-hover);
+            }
+        }
+    }
+}
