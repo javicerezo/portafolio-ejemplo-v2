@@ -1,0 +1,108 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+@use 'sass:map';
+
+.CuadroAmarillo {
+    &-sup {
+        background-color: map.get(v.$colores, color-fondo-transp);
+        z-index: 99;
+        transition: all 0.5s ease;
+        @include m.position (fixed, 0, 0, null, null);
+        height: 2.1875rem;
+        width: 100%;
+        backdrop-filter: blur(2px);
+        @include m.tablet {
+            height: 1.25rem;
+            top: 0.938rem;
+            left:  .9375rem;
+            width: calc( 100% - 1.875rem );
+            backdrop-filter: blur(0);
+        }
+        &--mod {
+            height: 2.1875rem;
+            top: 0;
+            left: 0;
+            width: 100%;
+            backdrop-filter: blur(2px);
+        }
+    }
+    &-der {
+        display: none;
+        @include m.tablet {
+            @include m.position (fixed, 2.1875rem, .9375rem, null, null);
+            background-color: map.get(v.$colores, color-fondo-transp);
+            z-index: 99;
+            width: 1.25rem;
+            height: calc( 100% - 4.375rem );
+            @include m.flex (column, nowrap, center, center);
+            transition: all 0.5s ease;
+            &--mod {
+                backdrop-filter: blur(1px);
+                height: calc( 100% - 3.4375rem );
+                right: 0;
+            }
+            
+            a {
+                font-size: .375em;
+                margin: 0.5rem 0;
+                color: map.get(v.$colores, color-primario);
+            }
+        }
+    }
+    &-inf {
+        display: none;
+        @include m.tablet {
+            @include m.position (fixed, null, null, .9375rem, .9375rem);
+            background-color: map.get(v.$colores, color-fondo-transp);
+            z-index: 99;
+            height: 1.25rem;
+            width: calc( 100% - 1.875rem );
+            @include m.flex (row, nowrap, center, center);
+            transition: all 0.5s ease;
+            &--mod {
+                backdrop-filter: blur(1px);
+                left: 0;
+                bottom: 0;
+                width: 100%;
+            }
+        }
+    }
+    &-p {
+        font-size: .9375rem;
+        font-style: italic;
+        &--mod {
+            display: none;
+        }                  
+        span {
+            margin: 0 .625rem;
+        }
+        a {
+            font-weight: 600;
+            &:hover {
+                color: map.get(v.$colores, color-hover);
+                transform: scale(1.1);
+            }
+        }
+    }
+    &-izq {
+        display: none;
+        @include m.tablet {
+            @include m.position (fixed, 2.1875rem, 0, 0, .9375rem);
+            background-color: map.get(v.$colores, color-fondo-transp);
+            z-index: 99;
+            width: 1.25rem;
+            height: calc( 100% - 4.375rem );
+            @include m.flex (column, nowrap, center, center);
+            transition: all 0.5s ease;
+            &--mod {
+                backdrop-filter: blur(1px);
+                height: calc( 100% - 3.4375rem );
+                left: 0;
+            }
+            a {
+                margin: 0.5rem 0;
+                color: map.get(v.$colores, color-primario);
+            }
+        }
+    }
+}
