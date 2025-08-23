@@ -1,0 +1,85 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+@use 'sass:map';
+
+.Tecnologias {
+    background-color: map-get(v.$colores, color-fondo-transp);
+    position: relative;
+    z-index: 10;
+    padding: .3125rem;
+    @include m.telefono-m {
+        padding: .625rem;
+    }
+    @include m.tablet {
+        width: calc( 100% - 2.5rem);
+    }
+    &-listado {
+        @include m.flex (row, nowrap, space-around, center);
+        @include m.tablet {
+            padding: .9375rem 1.5625rem;
+        }
+    }
+    &-titulo {
+        font-style: italic;
+        font-weight: 800;
+        font-size: .6875rem;
+        @include m.telefono-xl {
+            font-size: .9375rem;
+        }
+        @include m.tablet {
+            font-size: 1.25rem;
+            padding: 1rem;
+        }
+    }
+    &-ul {
+        @include m.telefono-xl {
+            padding: 0 1rem;
+        }
+        @include m.tablet {
+            padding: 0 1.5625rem;
+        }
+    }
+    &-li {
+        font-style: italic;
+        position: relative;
+        z-index: 10;
+        font-size: .625rem;
+        @include m.telefono-xl {
+            font-size: .75rem;
+        }
+        @include m.tablet {
+            font-size: .9375rem;
+        }
+    }
+    &-iconos {
+        @include m.flex (row, wrap, center, center);
+        position: relative;
+        z-index: 10;
+        margin: 1rem 0.5rem;
+        @include m.tablet {
+            margin: 0 1rem;
+        }
+        &-li {
+            font-size: 1.25rem;
+            margin: .3125rem;
+            transition: all .8s ease;
+            @include m.telefono-xl {
+                margin: .3125rem auto;
+                font-size: 1.5625rem;
+            }
+            &:hover {
+                color: map-get(v.$colores, color-fondo);
+                rotate: 360deg;
+            }
+        }
+    }
+    &-separador {
+        @include m.position (absolute, null, null, 0, 0);
+        width: 100%;
+        div {
+            @include m.position (absolute, null, null, 0, 0);
+            width: 100%;
+            z-index: 0;
+        }
+    }
+}
