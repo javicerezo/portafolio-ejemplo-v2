@@ -87,7 +87,7 @@
         input, textarea {
             width: 100%;
             padding: .625rem;
-            border: 2px solid map-get(v.$colores, color-fondo);
+            border: 2px solid var(--color-fondo);
             border-radius: .625rem;
             margin: .625rem 0;
         }
@@ -100,7 +100,7 @@
     }
     &-btn {
         margin: 20px 0;
-        color: map-get(v.$colores, color-primario);
+        color: var(--color-negro);
     }
     &-respuesta {
         width: 100%;

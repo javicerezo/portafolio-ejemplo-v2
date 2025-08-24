@@ -60,8 +60,8 @@ blockquote:before, blockquote:after, q:before, q:after {
 
 /* (Opcional) Configuramos el texto que seleccionamos */
 ::selection {
-  background-color: map.get(v.$colores, color-primario);
-  color: map.get(v.$colores, color-secundario);
+  background-color: var(--color-blanco);
+  color: var(--color-negro);
 }
 
 /* Nivelamos problemas de tipografías y colocación de formularios */

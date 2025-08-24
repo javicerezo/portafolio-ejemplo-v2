@@ -3,7 +3,7 @@
 @use 'sass:map';
 
 .Tecnologias {
-    background-color: map-get(v.$colores, color-fondo-transp);
+    background-color: var(--color-fondo-transp);
     position: relative;
     z-index: 10;
     padding: .3125rem;
@@ -70,7 +70,7 @@
                 font-size: 1.5625rem;
             }
             &:hover {
-                color: map-get(v.$colores, color-fondo);
+                color: var(--color-fondo);
                 rotate: 360deg;
             }
         }

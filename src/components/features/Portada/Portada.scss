@@ -26,7 +26,7 @@
         }
     }
     &-h1 {
-        color: map.get(v.$colores, color-secundario);
+        color: var(--color-blanco);
         font-weight: 800;
         font-style: italic;
         transition: transform 1.5s ease;
@@ -45,7 +45,7 @@
         }
     }
     &-h2 {
-        color: map.get(v.$colores, color-secundario);
+        color: var(--color-blanco);
         transition: transform 1.5s ease;
         font-size: 0.9em;
         padding: 0.5em 0;

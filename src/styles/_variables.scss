@@ -16,22 +16,20 @@ $fuentes: (
 );
 
 /* colores */
-$colores: (
-    "color-primario": #000,
-    "color-primario-2": #181818,
-    "color-secundario": #fff,
-    "color-secundario-2": #f0f0f0,
-    "color-hover-boton":#10209A40,
-    "color-hover": #5D4CC9,
-    "color-fondo": #ffc100e0,   //rgb(255, 193, 0)
-    "color-fondo-transp": #ffc1007d,
-    "color-activo": #61CE70,
-    "color-fondo-img-JC": #ffc100e0,
-    "color-fondo-img-JC-dark": #343d5b,
-    "color-ola-1": #ffffff2f,
-    "color-ola-2": #ffffff7c,
-    "color-ola-3": #fff,
-    "color-ola-1-dark": #00000031,
-    "color-ola-2-dark": #00000085,
-    "color-ola-3-dark": #000
-); 
+:root {
+    --color-negro: #222;
+    --color-blanco: #f5f5f5;
+    --color-hover-boton:#10209A40;
+    --color-hover: #5D4CC9;
+    --color-fondo: #ffc100e0;   //rgb(255; 193; 0)
+    --color-fondo-transp: #ffc1007d;
+    --color-activo: #61CE70;
+    --color-fondo-img-JC: #ffc100e0;
+    --color-fondo-img-JC-dark: #343d5b;
+    --color-ola-1: #ffffff2f;
+    --color-ola-2: #ffffff7c;
+    --color-ola-3: #fff;
+    --color-ola-1-dark: #00000031;
+    --color-ola-2-dark: #00000085;
+    --color-ola-3-dark: #000;
+}; 

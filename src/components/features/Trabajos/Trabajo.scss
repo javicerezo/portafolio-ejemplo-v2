@@ -20,7 +20,7 @@
     }
     &-img2 {
         font-size: 1.25rem;
-        color: map-get(v.$colores, color-primario);
+        color: var(--color-negro);
         position: absolute;
         transition: all 1s ease;
         display: none;

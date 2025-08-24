@@ -12,7 +12,7 @@
         width: 100%;
         @include m.tablet {
             backdrop-filter: blur(2px);
-            background-color: map.get(v.$colores, color-fondo-transp);
+            background-color:var(--color-fondo-transp);
             height: 1.25rem;
             top: 0.938rem;
             left:  .9375rem;
@@ -31,7 +31,7 @@
         display: none;
         @include m.tablet {
             @include m.position (fixed, 2.1875rem, .9375rem, null, null);
-            background-color: map.get(v.$colores, color-fondo-transp);
+            background-color:var(--color-fondo-transp);
             z-index: 99;
             width: 1.25rem;
             height: calc( 100% - 4.375rem );
@@ -46,7 +46,7 @@
             a {
                 font-size: .375em;
                 margin: 0.5rem 0;
-                color: map.get(v.$colores, color-primario);
+                color:var(--color-negro);
             }
         }
     }
@@ -54,7 +54,7 @@
         display: none;
         @include m.tablet {
             @include m.position (fixed, null, null, .9375rem, .9375rem);
-            background-color: map.get(v.$colores, color-fondo-transp);
+            background-color:var(--color-fondo-transp);
             z-index: 99;
             height: 1.25rem;
             width: calc( 100% - 1.875rem );
@@ -80,7 +80,7 @@
         a {
             font-weight: 600;
             &:hover {
-                color: map.get(v.$colores, color-hover);
+                color:var(--color-hover);
                 transform: scale(1.1);
             }
         }
@@ -89,7 +89,7 @@
         display: none;
         @include m.tablet {
             @include m.position (fixed, 2.1875rem, 0, 0, .9375rem);
-            background-color: map.get(v.$colores, color-fondo-transp);
+            background-color:var(--color-fondo-transp);
             z-index: 99;
             width: 1.25rem;
             height: calc( 100% - 4.375rem );
@@ -102,7 +102,7 @@
             }
             a {
                 margin: 0.5rem 0;
-                color: map.get(v.$colores, color-primario);
+                color:var(--color-negro);
             }
         }
     }

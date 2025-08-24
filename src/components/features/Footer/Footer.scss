@@ -5,7 +5,7 @@
 .Footer {
     @include m.flex (row, nowrap, space-between, center);
     margin: 0 auto;
-    background-color: map-get(v.$colores, color-primario);
+    background-color:var(--color-negro);
     padding: 0.5rem;
     margin-bottom: 0;
     @include m.telefono-xl {
@@ -16,26 +16,26 @@
         margin-bottom: 1.25rem;
     }
     &-autor {
-        color: map-get(v.$colores, color-secundario);
+        color: var(--color-blanco);
         font-size: 1em;
         @include m.tablet {
             font-size: 1.25rem;
         }
         span {
-            color: map-get(v.$colores, color-secundario);
+            color: var(--color-blanco);
             font-size: .9375rem;
         }
     }
     &-sociales {
         @include m.flex (row, nowrap, space-between, center);
-        color: map-get(v.$colores, color-secundario);
+        color: var(--color-blanco);
         a {
             padding: .625rem;
             font-size: 1.25em;
         }
     }
     &-flecha {
-        color: map-get(v.$colores, color-secundario);
+        color: var(--color-blanco);
         @include m.tablet {
             display: none;
         }

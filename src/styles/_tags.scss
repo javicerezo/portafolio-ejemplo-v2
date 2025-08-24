@@ -17,66 +17,70 @@ h1, h2, h3 {
 body {
     // max-width: 112.5rem;
     font-family : map.get(v.$fuentes, tipo-principal);
-    color: map.get(v.$colores, color-primario);
-    background-color: map.get(v.$colores, color-secundario);
+    color: var(--color-negro);
+    background-color: var(--color-blanco);
+    transition: all 1.5s ease;
+    
     &.darkmode {
-        ::selection {
-            background-color: map.get(v.$colores, color-secundario);
-            color: map.get(v.$colores, color-primario);
-        }
-        color: map.get(v.$colores, color-secundario);
-        background-color: map.get(v.$colores, color-primario);
-        .c-header__dark-mode {
-            background-color: map.get(v.$colores, color-fondo-img-JC-dark);
-        }
-        .c-cuadro{
-            &__sup {
-                background-color: map.get(v.$colores, color-fondo);
-            }
-            &__der {
-                background-color: map.get(v.$colores, color-fondo);
-            }
-            &__inf {
-                background-color: map.get(v.$colores, color-fondo);
-            }
-            &__izq {
-                background-color: map.get(v.$colores, color-fondo);
-            }
-            &__p {
-                color: map.get(v.$colores, color-primario);   
-            }
-        }
-        .c-efecto {
-            &__ola-1 {
-                fill: map.get(v.$colores, color-ola-1-dark);
-            }
-            &__ola-2 {
-                fill: map.get(v.$colores, color-ola-2-dark);
-            }
-            &__ola-3 {
-                fill: map.get(v.$colores, color-ola-3-dark);
-            }
-        }
-        .c-portada {
-            background-image: url('../../public/assets/imgs/portada2.jpg');
-        }
-        .c-contacto {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../public/assets/imgs/oficina2.jpg');
-        }
-        .c-header__nav {
-            background-color: map.get(v.$colores, color-fondo);
-            @include m.tablet {
-                background-color: transparent;
-            }
-        }
-        .c-header__img {
-            left: 1.875rem;
-        }
-        .c-modal {
-            &__contenedor {
-                color: map.get(v.$colores, color-secundario);
-                background-color: map.get(v.$colores, color-primario);
-            }
-        }
+        --color-negro: #f5f5f5;
+        --color-blanco: #222;
+        --color-fondo: #ffc1007d;
+        --color-fondo-transp: #ffc100e0;
+        --color-fondo-img-JC: #343d5b;
+    //     color: map.get(v.$colores, color-secundario);
+    //     background-color: map.get(v.$colores, color-primario);
+    //     ::selection {
+    //         background-color: map.get(v.$colores, color-secundario);
+    //         color: map.get(v.$colores, color-primario);
+    //     }
+    //     .Cuadro{
+    //         &-sup {
+    //             background-color: map.get(v.$colores, color-fondo);
+    //         }
+    //         &-der {
+    //             background-color: map.get(v.$colores, color-fondo);
+    //         }
+    //         &-inf {
+    //             background-color: map.get(v.$colores, color-fondo);
+    //         }
+    //         &-izq {
+    //             background-color: map.get(v.$colores, color-fondo);
+    //         }
+    //         &-p {
+    //             color: map.get(v.$colores, color-primario);   
+    //         }
+    //     }
+    //     .Efecto {
+    //         &-ola-1 {
+    //             fill: map.get(v.$colores, color-ola-1-dark);
+    //         }
+    //         &-ola-2 {
+    //             fill: map.get(v.$colores, color-ola-2-dark);
+    //         }
+    //         &-ola-3 {
+    //             fill: map.get(v.$colores, color-ola-3-dark);
+    //         }
+    //     }
+    //     .Portada {
+    //         background-image: url('../../public/assets/imgs/portada2.jpg');
+    //     }
+    //     .Contacto {
+    //         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../public/assets/imgs/oficina2.jpg');
+    //     }
+    //     .Header-nav {
+    //         background-color: map.get(v.$colores, color-fondo);
+    //         @include m.tablet {
+    //             background-color: transparent;
+    //         }
+    //     }
+    //     .Header-img {
+    //         left: 1.875rem;
+    //     }
+    //     .Modal {
+    //         &-contenedor {
+    //             color: map.get(v.$colores, color-secundario);
+    //             background-color: map.get(v.$colores, color-primario);
+    //         }
+    //     }
     }
 }
