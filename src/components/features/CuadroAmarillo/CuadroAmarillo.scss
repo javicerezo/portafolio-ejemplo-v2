@@ -4,14 +4,15 @@
 
 .CuadroAmarillo {
     &-sup {
-        background-color: map.get(v.$colores, color-fondo-transp);
+        background-color: transparent;
         z-index: 99;
         transition: all 0.5s ease;
         @include m.position (fixed, 0, 0, null, null);
         height: 2.1875rem;
         width: 100%;
-        backdrop-filter: blur(2px);
         @include m.tablet {
+            backdrop-filter: blur(2px);
+            background-color: map.get(v.$colores, color-fondo-transp);
             height: 1.25rem;
             top: 0.938rem;
             left:  .9375rem;
