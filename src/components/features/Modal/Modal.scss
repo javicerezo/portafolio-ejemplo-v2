@@ -1,0 +1,110 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+@use 'sass:map';
+
+.modal {
+    @include m.position (fixed, 0, 0, 0, 0);
+    z-index: 101;
+    @include m.flex (column, nowrap, center, center);
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s ease;
+    &--show {
+        opacity: 1;
+        pointer-events: unset;
+    }
+    &-contenedor {
+        width: 95%;
+        height: auto;
+        padding: .3125rem;
+        background-color: map-get(v.$colores, color-secundario);
+        color: map-get(v.$colores, color-primario);
+        border-radius: 10px;
+        @include m.telefono-xl {
+            width: 85%;
+            padding: 0.5rem;
+        }
+        @include m.tablet {
+            width: 75%;
+            padding: 1rem;
+            max-width: 45rem;
+        }
+        @include m.desktop {
+        }
+    }
+    &-superior {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        font-size: 0.85em;
+        @include m.flex(row, nowrap, space-between, center);
+        p {
+            font-style: italic;
+            font-weight: 800;
+        }
+        i {
+            padding: 1rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        @include m.telefono-m {
+            padding: 1.25rem;
+            font-size: 1em;
+        }
+        @include m.telefono-xl {
+            padding: 2rem;
+            font-size: 1.2rem;
+        }
+        @include m.tablet {
+            padding: 0 2.5rem;
+        }
+    }
+    &-titulo {
+        @include m.telefono-m {
+            font-size: 1.25em;
+        }
+        @include m.telefono-xl {
+            font-size: 1.25em;
+            padding: 0.5rem;
+        }
+        @include m.tablet {
+            font-size: 1.5em;
+        }
+    }
+    &-img {
+        margin: 0 auto;
+        padding: 1rem;
+        @include m.telefono-xl {
+            padding: 2rem;
+        }
+        @include m.tablet {
+            max-width: 34.375em;
+            padding: 2.5rem;
+        }
+        img {
+            border-radius: 6px;
+        }
+    }
+    &-inferior {
+        width: 100%;
+        padding: 1rem;
+        font-size: 0.85em;
+        @include m.flex (column, nowrap, center, flex-start);
+        @include m.telefono-m {
+            font-size: 1em;
+        }
+        @include m.telefono-xl {
+            font-size: 1.25em;
+            padding: 0 2rem 1rem 2rem;
+        }
+        @include m.tablet {
+            padding: 0 2.5rem;
+        }
+        @include m.desktop {
+            
+        }
+    }
+}
