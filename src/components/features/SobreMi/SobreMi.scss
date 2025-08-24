@@ -5,6 +5,8 @@
 .SobreMi {
     @include m.flex (column, nowrap, center, center);
     padding: .625rem;
+    width: 100%;
+    margin: 0 auto;
     @include m.telefono-m {
         padding: 1rem;
     }

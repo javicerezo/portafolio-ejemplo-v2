@@ -29,7 +29,7 @@ export const Trabajos = () => {
     }, [modal]);
 
     return (
-        <main className="Trabajos ontainer js-Trabajos" id="Trabajos">
+        <main className="Trabajos js-Trabajos" id="Trabajos">
             <h3 className="Trabajos-h3">Mis<span> trabajos </span>web</h3>
             <h4 className="Trabajos-h4">Una muestra de mis trabajos.</h4>
             <ul className="Trabajos-ul js-trabajos-ul">

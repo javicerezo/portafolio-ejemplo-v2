@@ -68,7 +68,7 @@ export const Contacto = () => {
     }, [enviarCorreo]);
 
     return (
-        <section className="Contacto container js-contacto" id="Contacto">
+        <section className="Contacto js-contacto" id="Contacto">
             <div className="Contacto-formulario">
                 <div className="Contacto-datos">
                     <h3 className="Contacto-h3">Contacto</h3>

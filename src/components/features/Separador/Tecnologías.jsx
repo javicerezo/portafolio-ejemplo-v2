@@ -2,7 +2,7 @@ import './Tecnologias.scss';
 
 export const Tecnologias = () => {
     return (
-        <div className="Tecnologias container">
+        <div className="Tecnologias">
         <div className="Tecnologias-listado">
             <div className="Tecnologias-tarjeta">
                 <h4 className="Tecnologias-titulo">Lenguajes programación</h4>

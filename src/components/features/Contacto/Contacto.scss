@@ -9,6 +9,8 @@
     background-position: center;
     margin-top: 1.25rem;
     padding: 1rem;
+    width: 100%;
+    margin: 0 auto;
     @include m.tablet {
         width: calc( 100% - 2.5rem);
     }

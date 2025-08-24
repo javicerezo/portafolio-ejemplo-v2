@@ -5,6 +5,8 @@
 .Trabajos {
     @include m.flex (column, nowrap, center, center);
     padding: 0.5rem;
+    width: 100%;
+    margin: 0 auto;
     @include m.telefono-xl {
         padding: 1rem 2rem;
     }
