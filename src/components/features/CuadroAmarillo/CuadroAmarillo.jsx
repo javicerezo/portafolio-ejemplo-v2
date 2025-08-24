@@ -16,24 +16,6 @@ export function CuadroAmarillo () {
         }
     });
 
-    // useEffect ( () => {
-    //     const cuadro = document.querySelector('.CuadroAmarillo');
-    //     const header = document.querySelector('.Header');
-
-    //     if(positionScrollY) {
-            
-    //         header.classList.add('Header--mod');
-              
-    //     } else {
-    //         if(cuadro.children[0].classList.contains('CuadroAmarillo-sup--mod')){
-                
-    //             header.classList.remove('Header--mod');
-                
-    //         }
-            
-    //     }
-    // })
-
     return (
         <section className="CuadroAmarillo">
             <div className={`CuadroAmarillo-sup ${positionScrollY ? "CuadroAmarillo-sup--mod" : ""}`}></div>
@@ -52,5 +34,5 @@ export function CuadroAmarillo () {
                 <a href="https://github.com/javicerezo/ejemplo-portafolio/" target="_blanck"><SiGithub /></a>
             </div>
         </section>
-    )
-}
+    );
+};
