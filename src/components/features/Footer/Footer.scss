@@ -1,0 +1,44 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+@use 'sass:map'; 
+
+.Footer {
+    @include m.flex (row, nowrap, space-between, center);
+    margin: 0 auto;
+    background-color: map-get(v.$colores, color-primario);
+    padding: 0.5rem;
+    margin-bottom: 0;
+    @include m.telefono-xl {
+        padding: 1.25rem;
+    }
+    @include m.tablet {
+        width: calc( 100% - 2.5rem);
+        margin-bottom: 1.25rem;
+    }
+    &-autor {
+        color: map-get(v.$colores, color-secundario);
+        font-size: 1em;
+        @include m.tablet {
+            font-size: 1.25rem;
+        }
+        span {
+            color: map-get(v.$colores, color-secundario);
+            font-size: .9375rem;
+        }
+    }
+    &-sociales {
+        @include m.flex (row, nowrap, space-between, center);
+        color: map-get(v.$colores, color-secundario);
+        a {
+            padding: .625rem;
+            font-size: 1.25em;
+        }
+    }
+    &-flecha {
+        color: map-get(v.$colores, color-secundario);
+        @include m.tablet {
+            display: none;
+        }
+    }
+    
+}

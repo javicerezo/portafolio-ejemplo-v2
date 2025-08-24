@@ -5,6 +5,7 @@ import { Tecnologias } from "./components/features/Separador/Tecnologías";
 import { SobreMi } from "./components/features/SobreMi/SobreMi";
 import { Trabajos } from "./components/features/Trabajos/Trabajos";
 import { Contacto } from "./components/features/Contacto/Contacto";
+import { Footer } from "./components/features/Footer/Footer";
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
       <SobreMi />
       <Trabajos />
       <Contacto />
+      <Footer />
     </>
   );
 };
