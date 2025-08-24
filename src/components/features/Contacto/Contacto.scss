@@ -1,0 +1,107 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+@use 'sass:map'; 
+
+.Contacto {
+    background-image: url('../../public/assets/imgs/oficina.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    @include m.tablet {
+        width: calc( 100% - 2.5rem);
+    }
+    @include m.desktop {
+        padding: 6.25rem;
+    }
+    &-formulario {
+        padding: .5rem;
+        @include m.flex (column, nowrap, center, center);
+        @include m.tablet {
+            @include m.flex (row, nowrap, space-between, flex-start);
+        }
+    }
+    &-datos {
+        @include m.flex (column, nowrap, space-between, center);
+        padding-bottom: 1rem;
+        @include m.tablet {
+            padding: 0 2rem;
+        }
+    }
+    &-h3 {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+        padding: 1rem;
+            div.animacion {
+                transform: translateY(-60px);
+            }
+            div {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                transition: all 0.3s ease;
+                .segunda-linea {
+                    position: absolute;
+                    top: 60px;
+                }
+            }
+        @include m.telefono-m {
+            font-size: 1.8em;
+        }
+        @include m.telefono-xl {
+            font-size: 2.5em;
+            padding: 2rem;
+        }
+        @include m.tablet {
+            font-size: 3em;
+        }
+    }
+    &-li {
+        padding: .1875rem;
+        i {
+            margin: 0 .9375rem;
+        }
+    }
+    &-sociales {
+        padding: 1rem;
+        @include m.flex (row, nowrap, center, center);
+        a {
+            margin: .3125rem;
+            font-size: 1.25rem;
+        }
+    }
+    &-inputs {
+        width: 85%;
+        @include m.telefono-xl {
+            width: 90%;
+        }
+        @include m.tablet {
+            width: 100%;
+        }
+        input, textarea {
+            width: 100%;
+            padding: .625rem;
+            border: 2px solid map-get(v.$colores, color-fondo);
+            border-radius: .625rem;
+            margin: .625rem 0;
+        }
+        textarea {
+            min-height: 7.5rem;
+            max-height: 18.75rem;
+            min-width: 100%;
+            max-width: 100%;
+        }
+    }
+    &-btn {
+        margin: 20px 0;
+        color: map-get(v.$colores, color-primario);
+    }
+    &-respuesta {
+        width: 100%;
+        @include m.flex (column, nowrap, space-around, center);
+    }
+}
