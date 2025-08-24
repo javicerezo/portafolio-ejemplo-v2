@@ -3,12 +3,20 @@
 @use 'sass:map';
 
 .Header {
-    @include m.flex (row, nowrap, space-between, center);
+    @include m.flex (row, wrap, space-between, center);
     @include m.position (fixed, 0, null, null, null);
+    background-color: map.get(v.$colores, color-fondo-transp);
+    margin: 0 auto;
+    width: 100%;
     transition: all 0.5s ease;
-    height: 2.1875rem;
+    padding: 0.5rem;
+    backdrop-filter: blur(2px);
     z-index: 100;
     @include m.tablet {
+        backdrop-filter: blur(0);
+        padding: 0;
+        background-color: transparent;
+        height: 2.1875rem;
         top: 2.5rem;
     }
     &--mod {
@@ -22,29 +30,32 @@
         }
     }
 
-    &-dark-mode {
+    &-darkMode {
+        position: relative;
+        @include m.flex(row, nowrap, center, center);
         background-color: map-get(v.$colores, color-fondo-img-JC);
         border-radius: .9375rem;
-        padding: 0 0.5rem;
-        position: relative;
+        padding: 0.5rem 0.7rem;
         transition: all 0.5s ease;
         cursor: pointer;
-
+        &--mod {
+            background-color: map-get(v.$colores, color-fondo-img-JC-dark);
+        }
     }
     &-img {
-        height: 1.875em;
-        width: 1.875em;
-        position: absolute;
-        top: -.05rem;
-        left: -0.2rem;
+        height: 2rem;
+        width: 2rem;
+        @include m.position (absolute, -0.1rem, null, null, 0rem);
         transition: all 0.5s ease;
-
+        &--mod {
+            left: 2.1rem;
+        }
     }
     &-span {
         color: map-get(v.$colores, color-secundario);
         line-height: 1.5625rem;
         font-size: .75rem;
-        padding: 0 0.2rem;
+        padding: 0 0.3rem;
     }
     &-autor {
         color: map-get(v.$colores , color-primario);
@@ -69,32 +80,21 @@
     &-burger {
         position: relative;
         margin: 0 1rem;
+        font-size: 20px;
         @include m.tablet {
-            display: none;
-        }
-        input {
-            display: none;
-        }
-        &-icono {
-            font-size: 20px;
-            position: relative;
             color: map-get(v.$colores, color-primario);
+            display: none;
         }
     }
     &-nav {
+        @include m.flex (column, nowrap, center, center);
+        width: 100%;
         opacity: 0;
         visibility: hidden;
-        width: 0%;
-        @include m.position (absolute, null, -7.8857rem, -9.8476rem, null);
-        @include m.flex (column, nowrap, center, center);
-        background-color: map-get(v.$colores, color-fondo-transp);
-        backdrop-filter: blur(2px);
+        max-height: 0;
         transition: all 1s ease;
         @include m.tablet {
             @include m.flex (row, nowrap, space-between, center);
-            top: 0;
-            right: 0;
-            bottom: 0;
             margin: 0 2rem;
             background-color: transparent;
             backdrop-filter: blur(0);
@@ -103,10 +103,10 @@
             width: auto;
         }
         &--mod {
+            margin: 1rem 0;
             opacity: 1;
             visibility: visible;
-            width: auto;
-            right: 0;
+            max-height: 31.25rem;
         }
     }
     &-li {
