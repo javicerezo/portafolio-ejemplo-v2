@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-
 import { deshabilitar, habilitar, comprobarCorreo, imprimirAlerta, 
         resetFormulario } from "./funciones";
 
 import './Contacto.scss';
+import { Button } from "../../ui/Button/Button";
 
 export const Contacto = () => {
     const [objCorreo, setObjCorreo] = useState({nombre: '', correo:'', asunto: ''});
@@ -86,7 +86,7 @@ export const Contacto = () => {
                     <input id="nombre" name="nombre" type="text" placeholder="NOMBRE" onInput={handleInputNombre}/>
                     <input id="correo" name="correo" type="email" placeholder="EMAIL" onChange={handleInputCorreo}/>
                     <textarea id="asunto" name="asunto" placeholder="ASUNTO" onChange={handleInputAsunto}></textarea>
-                    <button className="Contacto-btn js-contacto-btn o-button o-button--amarillo" 
+                    <button className="Contacto-btn js-contacto-btn Button Button--amarillo" 
                     id="btn-enviar" type="submit" onClick={handleEnviarCorreo}>Enviar</button>
                 </form>
             </div>
