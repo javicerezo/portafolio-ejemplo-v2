@@ -56,7 +56,7 @@
     }
     &-autor {
         color: var(--color-negro-FIJO);
-        font-family: map-get(v.$fuentes, tipo-secundaria);
+        font-family: map.get(v.$fuentes, tipo-secundaria);
         padding-left: 0.5rem;
         font-style: italic;
         font-weight: 700;
@@ -128,7 +128,7 @@
     }
     &-a {
         color: var(--color-negro-FIJO);
-        font-family: map-get(v.$fuentes, tipo-secundaria);
+        font-family: map.get(v.$fuentes, tipo-secundaria);
         font-weight: 800;
         font-size: .8em;
         transition: all 0.5s ease;
