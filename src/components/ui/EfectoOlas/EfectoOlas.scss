@@ -1,0 +1,23 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+@use 'sass:map';
+
+.EfectoOla {
+    @include m.position (absolute, null, null, 0, 0);
+    width: 100%;
+    &-container {
+        @include m.position (absolute, null, null, 0, 0);
+        width: 100%;
+        z-index: 0;
+    }
+    
+    &-1 {
+        fill: var(--color-ola-1);
+    }
+    &-2 {
+        fill: var(--color-ola-2);
+    }
+    &-3 {
+        fill: var(--color-ola-3);
+    }
+}
