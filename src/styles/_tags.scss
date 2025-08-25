@@ -25,10 +25,10 @@ body {
         --color-ola-2: #2222227c;
         --color-ola-3: #222;
         .Portada {
-            background-image: url('../../public/assets/imgs/portada2.jpg');
+            background-image: url('assets/imgs/portada2.jpg');
         }
         .Contacto {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../public/assets/imgs/oficina2.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/imgs/oficina2.jpg');
         }
         ::selection {
             background-color: var(--color-negro);
