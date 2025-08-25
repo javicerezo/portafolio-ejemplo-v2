@@ -6,7 +6,7 @@ export function Portada () {
         <section className="Portada js-portada" id="Portada">
             <div className="Portada-contanier">
                 <h1 className="Portada-h1">
-                    Nombre Apellidos 
+                    {'< Nombre Apellidos />'} 
                 </h1>
                 <h2 className="Portada-h2"> - DESARROLLADOR WEB - </h2>
                 <div className="Portada-button">

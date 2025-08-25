@@ -30,16 +30,16 @@ export const Header = () => {
                     <span className="Header-span"><FaMoon /></span>
                     <span className="Header-span"><FaSun /></span>
                 </div>
-                <p className="Header-autor"><a href="https://javicerezo.netlify.app/" target="_blank"> El Portafolio de NombreApellidos</a>
+                <p className={`Header-autor ${posScrollY ? "Header-autor--mod" : ""}`}><a href="https://javicerezo.netlify.app/" target="_blank"> {`El Portafolio de < NombreApellidos />`}</a>
                 </p>
             </div>
             <div className="Header-burger" onClick={ () => (setMenuOn(!menuOn)) }>
                 {menuOn ? (<FaXmark  />) : (<FaBars  />)}
             </div>
             <ul className={`Header-nav ${menuOn ? "Header-nav--mod" : ""}`} >
-                <li className="Header-li"><a className="Header-a" href="#SobreMi">SOBRE MÍ</a></li>
-                <li className="Header-li"><a className="Header-a" href="#Trabajos">PORTAFOLIO</a></li>
-                <li className="Header-li"><a className="Header-a" href="#Contacto">CONTACTO</a></li>
+                <li className="Header-li"><a className={`Header-a ${posScrollY ? "Header-a--mod" : ""}`} href="#SobreMi">SOBRE MÍ</a></li>
+                <li className="Header-li"><a className={`Header-a ${posScrollY ? "Header-a--mod" : ""}`} href="#Trabajos">PORTAFOLIO</a></li>
+                <li className="Header-li"><a className={`Header-a ${posScrollY ? "Header-a--mod" : ""}`} href="#Contacto">CONTACTO</a></li>
                 <div className="Header-li">
                     <a className="Header-li-iconos" href="https://linkedin.com/in/javicerezoorellana" target="_blanck"><SiLinkedin /></a>
                     <a className="Header-li-iconos" href="https://github.com/javicerezo" target="_blanck"><SiGithub /></a>

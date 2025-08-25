@@ -76,6 +76,9 @@
         @include m.tablet {
             color: var(--color-blanco);
         }
+        &--mod {
+            color: var(--color-negro);
+        }
     }
     &-burger {
         position: relative;
@@ -143,16 +146,16 @@
             transform: scale(1.1);
         }
     }
-    &--mod {
-        top: 0;
-        .c-header-autor {
-            color: var(--color-negro);
-        }
-        .c-header-a {
-            color: var(--color-negro);
-            &:hover {
-                color: var(--color-hover);
-            }
-        }
-    }
+    // &--mod {
+    //     top: 0;
+    //     .c-header-autor {
+    //         color: var(--color-negro);
+    //     }
+    //     .c-header-a {
+    //         color: var(--color-negro);
+    //         &:hover {
+    //             color: var(--color-hover);
+    //         }
+    //     }
+    // }
 }
