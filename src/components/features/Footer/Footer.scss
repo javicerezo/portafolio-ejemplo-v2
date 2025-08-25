@@ -27,6 +27,7 @@
     }
     &-sociales {
         @include m.flex (row, nowrap, space-between, center);
+        color: var(--color-blanco-FIJO);
         a {
             padding: .625rem;
             font-size: 1.25em;

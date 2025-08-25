@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import { FaSun, FaMoon, FaBars, FaXmark } from "react-icons/fa6";
 import { SiLinkedin, SiGithub  } from "react-icons/si";
+import  imgJC  from '@/assets/imgs/favicon-transp.png';
+
 import './Header.scss';
 
 export const Header = () => {
@@ -26,7 +28,7 @@ export const Header = () => {
         <header className={`Header ${posScrollY ? "Header--mod" : ""}`}>
             <div className="Header-izquierda">
                 <div className={`Header-darkMode ${darkModeOn ? "Header-darkMode--mod" : ""}`} onClick={ () => (setDarkModeOn(!darkModeOn)) }>
-                    <img className={`Header-img ${darkModeOn ? "Header-img--mod" : ""}`} src="assets/imgs/favicon-transp.png" alt="icono modo oscuro"/>
+                    <img className={`Header-img ${darkModeOn ? "Header-img--mod" : ""}`} src={imgJC} alt="icono modo oscuro"/>
                     <span className="Header-span"><FaMoon /></span>
                     <span className="Header-span"><FaSun /></span>
                 </div>

@@ -1,26 +1,33 @@
+import imgSubmarine from '@/assets/imgs/proyects/submarine.png';
+import imgCabin     from '@/assets/imgs/proyects/cabin.png';
+import imgCake      from '@/assets/imgs/proyects/cake.png';
+import imgGame      from '@/assets/imgs/proyects/game.png';
+import imgSafe      from '@/assets/imgs/proyects/safe.png';
+import imgCircus    from '@/assets/imgs/proyects/circus.png';
+
 export const dbTrabajos = [
   {
       value: 0,
-      image: 'assets/imgs/proyects/submarine.png'
+      image: imgSubmarine
   },
   {
       value: 1,
-      image: 'assets/imgs/proyects/cabin.png'
+      image: imgCabin
   },
   {
       value: 2,
-      image: 'assets/imgs/proyects/cake.png'
+      image: imgCake
   },
   {
       value: 3,
-      image: 'assets/imgs/proyects/game.png'
+      image: imgGame
   },
   {
       value: 4,
-      image: 'assets/imgs/proyects/safe.png'
+      image: imgSafe
   },
   {
       value: 5,
-      image: 'assets/imgs/proyects/circus.png'
+      image: imgCircus
   }
 ]
