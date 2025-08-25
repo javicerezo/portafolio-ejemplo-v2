@@ -1,7 +1,7 @@
 export const dbModal = [
   {
       value: 0,
-      image: '/img/portafolio/submarine.png',
+      image: 'assets/imgs/proyects/submarine.png',
       tittle: 'Titulo proyecto 1',
       url: '#',
       caract: 'HTML, CSS, JavaScritp',
@@ -9,7 +9,7 @@ export const dbModal = [
   },
   {
       value: 1,
-      image: '/img/portafolio/cabin.png',
+      image: 'assets/imgs/proyects/cabin.png',
       tittle: 'Titulo proyecto 2',
       url: '#',
       caract: 'HTML, CSS, JavaScritp, Gulp',
@@ -17,7 +17,7 @@ export const dbModal = [
   },
   {
       value: 2,
-      image: '/img/portafolio/cake.png',
+      image: 'assets/imgs/proyects/cake.png',
       tittle: 'Titulo proyecto 3',
       url: '#',
       caract: 'HTML, CSS, ReactJS, Vite',
@@ -25,7 +25,7 @@ export const dbModal = [
   },
   {
       value: 3,
-      image: '/img/portafolio/game.png',
+      image: 'assets/imgs/proyects/game.png',
       tittle: 'Titulo proyecto 4',
       url: '#',
       caract: 'HTML, CSS, JavaScritp, NodeJS',
@@ -33,7 +33,7 @@ export const dbModal = [
   },
   {
       value: 4,
-      image: '/img/portafolio/safe.png',
+      image: 'assets/imgs/proyects/safe.png',
       tittle: 'Titulo proyecto 5',
       url: '#',
       caract: 'HTML, CSS, JavaScritp',
@@ -41,7 +41,7 @@ export const dbModal = [
   },
   {
       value: 5,
-      image: '/img/portafolio/circus.png',
+      image: 'assets/imgs/proyects/circus.png',
       tittle: 'Titulo proyecto 6',
       url: '#',
       caract: 'HTML, CSS, MongoDB, React, NodeJS',

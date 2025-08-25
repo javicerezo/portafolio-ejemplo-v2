@@ -1,26 +1,26 @@
 export const dbTrabajos = [
   {
       value: 0,
-      image: 'assets/imgs/portafolio/submarine.png'
+      image: 'assets/imgs/proyects/submarine.png'
   },
   {
       value: 1,
-      image: 'assets/imgs/portafolio/cabin.png'
+      image: 'assets/imgs/proyects/cabin.png'
   },
   {
       value: 2,
-      image: 'assets/imgs/portafolio/cake.png'
+      image: 'assets/imgs/proyects/cake.png'
   },
   {
       value: 3,
-      image: 'assets/imgs/portafolio/game.png'
+      image: 'assets/imgs/proyects/game.png'
   },
   {
       value: 4,
-      image: 'assets/imgs/portafolio/safe.png'
+      image: 'assets/imgs/proyects/safe.png'
   },
   {
       value: 5,
-      image: 'assets/imgs/portafolio/circus.png'
+      image: 'assets/imgs/proyects/circus.png'
   }
 ]
