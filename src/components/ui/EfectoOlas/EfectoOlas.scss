@@ -10,14 +10,16 @@
         width: 100%;
         z-index: 0;
     }
-    
     &-1 {
+        transition: all 1.5s ease;
         fill: var(--color-ola-1);
     }
     &-2 {
+        transition: all 1.5s ease;
         fill: var(--color-ola-2);
     }
     &-3 {
+        transition: all 1.5s ease;
         fill: var(--color-ola-3);
     }
 }

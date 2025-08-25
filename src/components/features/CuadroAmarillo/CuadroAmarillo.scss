@@ -46,12 +46,13 @@
             a {
                 font-size: .375em;
                 margin: 0.5rem 0;
-                color:var(--color-negro);
+                color:var(--color-negro-FIJO);
             }
         }
     }
     &-inf {
         display: none;
+        color: var(--color-negro-FIJO);
         @include m.tablet {
             @include m.position (fixed, null, null, .9375rem, .9375rem);
             background-color:var(--color-fondo-transp);
@@ -102,7 +103,7 @@
             }
             a {
                 margin: 0.5rem 0;
-                color:var(--color-negro);
+                color:var(--color-negro-FIJO);
             }
         }
     }

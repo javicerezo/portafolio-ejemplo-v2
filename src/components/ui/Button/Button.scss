@@ -2,9 +2,9 @@
 @use 'sass:map';
 
 .Button {
-    border: 2px solid var(--color-blanco);
+    border: 2px solid var(--color-blanco-FIJO);
     border-radius: 15px;
-    color: var(--color-blanco);
+    color: var(--color-blanco-FIJO);
     font-size: .9375rem;
     padding: .625rem .9375rem;
     cursor: pointer;

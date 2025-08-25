@@ -16,20 +16,25 @@ $fuentes: (
 );
 
 /* colores */
+// NOTA: los colores-FIJO se denominan así para que al hacer cambio en el :root para darkMode no cambien
 :root {
     --color-negro: #222;
+    --color-negro-FIJO: #222;
     --color-blanco: #f5f5f5;
+    --color-blanco-FIJO: #f5f5f5;
     --color-hover-boton:#10209A40;
     --color-hover: #5D4CC9;
     --color-fondo: #ffc100e0;   //rgb(255; 193; 0)
+    --color-fondo-FIJO: #ffc100e0; 
     --color-fondo-transp: #ffc1007d;
+    --color-fondo-transp-FIJO: #ffc1007d;
     --color-activo: #61CE70;
     --color-fondo-img-JC: #ffc100e0;
     --color-fondo-img-JC-dark: #343d5b;
-    --color-ola-1: #ffffff2f;
-    --color-ola-2: #ffffff7c;
-    --color-ola-3: #fff;
-    --color-ola-1-dark: #00000031;
-    --color-ola-2-dark: #00000085;
-    --color-ola-3-dark: #000;
+    --color-ola-1: #f5f5f52a;
+    --color-ola-2: #f5f5f577;
+    --color-ola-3: #f5f5f5;
+    --color-ola-1-dark: #2222222d;
+    --color-ola-2-dark: #2222227c;
+    --color-ola-3-dark: #222;
 }; 
