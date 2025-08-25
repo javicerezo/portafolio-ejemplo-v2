@@ -44,6 +44,9 @@
         width: 2.1rem;
         @include m.position (absolute, -0.2rem, null, null, 0rem);
         transition: all 0.5s ease;
+        &--mod {
+            left: 2.1rem;
+        }
     }
     &-span {
         color: var(--color-blanco-FIJO);
