@@ -21,13 +21,6 @@ export const Trabajos = () => {
         })
     }, [trabajo]);
 
-    useEffect( () => {
-        const cuadroModal = document.querySelector('.js-modal');
-        if(cuadroModal != null) {
-            cuadroModal.classList.add('Modal--show');
-        }
-    }, [modal]);
-
     return (
         <main className="Trabajos js-Trabajos" id="Trabajos">
             <h3 className="Trabajos-h3">Mis<span> trabajos </span>web</h3>
@@ -45,4 +38,4 @@ export const Trabajos = () => {
             {modal.show ? <Modal key={modal.value} obj={modal} setTrabajo={setTrabajo} setModal={setModal}/> : null}
         </main>
     );
-}
+};

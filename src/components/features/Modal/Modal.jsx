@@ -1,19 +1,28 @@
+import { FaXmark } from "react-icons/fa6";
+
 import './Modal.scss';
+import { useState } from "react";
 
 export const Modal = ({obj, setTrabajo, setModal}) => {
+    const [ show, setShow ] = useState(false);      // LO CAMBIO CON SETTIMEOUT Y ALE
     const {image, tittle, url, caract, desc } = obj;
 
+    setTimeout( () => ( setShow(true)), 500);
+
     const handleClick = () => {
-        setModal({});
-        setTrabajo({});
-    }
+        setShow(false);
+        setTimeout( () => {
+            setModal({});
+            setTrabajo({});
+        }, 500);
+    };
     
     return (
-        <div className="Modal js-modal">
+        <div className={`Modal ${show ? "Modal--show" : ""}`}>
             <div className="Modal-contenedor">
                 <div className="Modal-superior">
                     <p className="Modal-url"><a href={url} target="_blank">PON LA URL DEL PROYECTO</a></p>
-                    <i className="fa-solid fa-x" onClick={handleClick}></i>
+                    <div><FaXmark onClick={handleClick} /></div>
                 </div>
                 <h3 className="Modal-titulo">{tittle}</h3>
                 <div className="Modal-img">
