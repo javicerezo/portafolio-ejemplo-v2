@@ -9,22 +9,29 @@
         transition: all 0.5s ease;
         @include m.position (fixed, 0, 0, null, null);
         height: 2.1875rem;
-        width: 100%;
         @include m.tablet {
             backdrop-filter: blur(2px);
             background-color:var(--color-fondo-transp);
             height: 1.25rem;
             top: 0.938rem;
             left:  .9375rem;
-            width: calc( 100% - 1.875rem );
+            right:  .9375rem;
             backdrop-filter: blur(0);
+        }
+        @include m.desktop-xl {
+            left: calc(max((100vw - 112.5rem) / 2, 0px) + .9375rem); 
+            right: calc(max((100vw - 112.5rem) / 2, 0px) + .9375rem); 
         }
         &--mod {
             height: 2.1875rem;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             backdrop-filter: blur(2px);
+            @include m.desktop-xl {
+                left: calc(max((100vw - 112.5rem) / 2, 0px) - .45rem); 
+                right: calc(max((100vw - 112.5rem) / 2, 0px) - .5rem ); 
+            }
         }
     }
     &-der {
@@ -37,10 +44,16 @@
             height: calc( 100% - 4.375rem );
             @include m.flex (column, nowrap, center, center);
             transition: all 0.5s ease;
+            @include m.desktop-xl {
+                right: calc(max((100vw - 112.5rem) / 2, 0px) + .9375rem); 
+            }
             &--mod {
                 backdrop-filter: blur(1px);
                 height: calc( 100% - 3.4375rem );
                 right: 0;
+                @include m.desktop-xl {
+                   right: calc(max((100vw - 112.5rem) / 2, 0px) - .5rem ); 
+                }
             }
             
             a {
@@ -58,14 +71,23 @@
             background-color:var(--color-fondo-transp);
             z-index: 99;
             height: 1.25rem;
-            width: calc( 100% - 1.875rem );
+            left:  .9375rem;
+            right:  .9375rem;
             @include m.flex (row, nowrap, center, center);
             transition: all 0.5s ease;
-            &--mod {
-                backdrop-filter: blur(1px);
-                left: 0;
-                bottom: 0;
-                width: 100%;
+        }
+        @include m.desktop-xl {
+            left: calc(max((100vw - 112.5rem) / 2, 0px) + .9375rem); 
+            right: calc(max((100vw - 112.5rem) / 2, 0px) + .9375rem); 
+        }
+        &--mod {
+            backdrop-filter: blur(1px);
+            left: 0;
+            right: 0;
+            bottom: 0;
+            @include m.desktop-xl {
+                left: calc(max((100vw - 112.5rem) / 2, 0px) - .45rem); 
+                right: calc(max((100vw - 112.5rem) / 2, 0px) - .5rem ); 
             }
         }
     }
@@ -96,10 +118,16 @@
             height: calc( 100% - 4.375rem );
             @include m.flex (column, nowrap, center, center);
             transition: all 0.5s ease;
+            @include m.desktop-xl {
+                left: calc(max((100vw - 112.5rem) / 2, 0px) + .9375rem); 
+            }
             &--mod {
                 backdrop-filter: blur(1px);
                 height: calc( 100% - 3.4375rem );
                 left: 0;
+                @include m.desktop-xl {
+                   left: calc(max((100vw - 112.5rem) / 2, 0px) - .45rem); 
+                }
             }
             a {
                 margin: 0.5rem 0;

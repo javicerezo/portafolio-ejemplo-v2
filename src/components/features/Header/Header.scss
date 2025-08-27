@@ -19,6 +19,11 @@
         height: 2.1875rem;
         top: 2.5rem;
     }
+    @include m.desktop-xl {
+        width: auto;
+        left: calc(max((100vw - 112.5rem) / 2, 0px) + .9375rem); 
+        right: calc(max((100vw - 112.5rem) / 2, 0px) + .9375rem); 
+    }
     &--mod {
         top: 0;
     }
